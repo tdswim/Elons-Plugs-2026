@@ -3,7 +3,7 @@ const pptxgen = require("pptxgenjs");
 // ============================================================
 // Elon's Plugs — March Madness 2026 Bracket Tracker
 // Pixel-matched to Men's Finance Bracket reference deck
-// Data as of: March 22, 2026 8:30 PM ET
+// Data as of: March 23, 2026 — R32 Complete
 // ============================================================
 
 const pres = new pptxgen();
@@ -31,26 +31,25 @@ const C = {
   creamRow:   "FBF5ED",
 };
 
-// ── Data (8:30 PM ET, post-Tennessee 79-72 Virginia) ──
+// ── Data (R32 Complete — Mar 23, 2026) ──
 const standings = [
-  { rank: 1, name: "TaylorDuran",       pts: 450, pct: 97.46, w: 37, l: 8,  max: 1770, rem: 1320, r64: 290, r32: 160, champ: "Arizona",   chalk: 81, uniq: 5  },
-  { rank: 2, name: "Fizzz3",            pts: 440, pct: 79.86, w: 35, l: 10, max: 1760, rem: 1320, r64: 260, r32: 180, champ: "Arizona",   chalk: 75, uniq: 10 },
-  { rank: 3, name: "Capn'Kirk",         pts: 430, pct: 87.97, w: 34, l: 10, max: 1790, rem: 1360, r64: 250, r32: 180, champ: "Duke",      chalk: 95, uniq: 0  },
-  { rank: 4, name: "Paul233365",        pts: 400, pct: 70.53, w: 32, l: 13, max: 1720, rem: 1320, r64: 220, r32: 180, champ: "Florida",   chalk: 71, uniq: 14 },
-  { rank: 5, name: "twnutt",            pts: 390, pct: 58.38, w: 31, l: 14, max: 1710, rem: 1320, r64: 230, r32: 160, champ: "Auburn",    chalk: 63, uniq: 8  },
-  { rank: 6, name: "inursha",           pts: 370, pct: 47.44, w: 30, l: 15, max: 1690, rem: 1320, r64: 210, r32: 160, champ: "Houston",   chalk: 66, uniq: 12 },
-  { rank: 7, name: "ESPNFAN828",        pts: 350, pct: 29.65, w: 28, l: 17, max: 1670, rem: 1320, r64: 190, r32: 160, champ: "Duke",      chalk: 85, uniq: 2  },
-  { rank: 8, name: "ESPNFAN969",        pts: 310, pct: 10.79, w: 25, l: 20, max: 1630, rem: 1320, r64: 150, r32: 160, champ: "Tennessee", chalk: 58, uniq: 18 },
+  { rank: 1, name: "TaylorDuran",         pts: 510, pct: 96.98, w: 40, l: 10, max: 1710, rem: 1200, r64: 290, r32: 220, champ: "Arizona",   chalk: 81, uniq: 5  },
+  { rank: 2, name: "Capn'Kirk",           pts: 490, pct: 89.96, w: 37, l: 13, max: 1650, rem: 1160, r64: 250, r32: 240, champ: "Duke",      chalk: 95, uniq: 0  },
+  { rank: 3, name: "Fizzz3",              pts: 480, pct: 83.46, w: 37, l: 13, max: 1680, rem: 1200, r64: 260, r32: 220, champ: "Arizona",   chalk: 75, uniq: 10 },
+  { rank: 4, name: "Wisdom TeethPicks 1", pts: 460, pct: 66.75, w: 35, l: 15, max: 1620, rem: 1160, r64: 240, r32: 220, champ: "Arizona",   chalk: 71, uniq: 14 },
+  { rank: 5, name: "twnutt",              pts: 430, pct: 43.28, w: 33, l: 17, max: 1590, rem: 1160, r64: 230, r32: 200, champ: "Duke",      chalk: 63, uniq: 8  },
+  { rank: 6, name: "Rike Myan",           pts: 400, pct: 25.93, w: 32, l: 18, max: 1240, rem: 840,  r64: 240, r32: 160, champ: "Duke",      chalk: 85, uniq: 2  },
+  { rank: 7, name: "inursha",             pts: 400, pct: 25.93, w: 30, l: 20, max: 1240, rem: 840,  r64: 200, r32: 200, champ: "Duke",      chalk: 66, uniq: 12 },
+  { rank: 8, name: "DIP Harambe",         pts: 350, pct: 12.81, w: 29, l: 21, max: 1430, rem: 1080, r64: 230, r32: 120, champ: "Duke",      chalk: 58, uniq: 18 },
 ];
 
 const TOTAL_SLIDES = 10;
 const groupAvg = Math.round(standings.reduce((s, p) => s + p.pts, 0) / standings.length);
-const updateTime = "Mar 22, 2026, 8:30 PM CT";
+const updateTime = "Mar 23, 2026 — R32 Complete";
 
 // Champion colors
 const champColor = {
-  "Arizona": C.red, "Duke": C.navy, "Florida": C.green,
-  "Auburn": C.gold, "Houston": "1A5276", "Tennessee": "E8793A",
+  "Arizona": C.red, "Duke": C.navy,
 };
 
 // Bar colors for points chart: top 3 get accent, rest navy
@@ -102,7 +101,7 @@ const mkShadow = () => ({ type: "outer", blur: 4, offset: 2, angle: 135, color: 
     x: 0.7, y: 2.25, w: 8.6, h: 0.65,
     fontSize: 28, fontFace: "Calibri", color: C.red, bold: true
   });
-  s.addText("ESPN Tournament Challenge  /  Bracket Analytics  /  Mar 22, 2026", {
+  s.addText("ESPN Tournament Challenge  /  Bracket Analytics  /  Mar 23, 2026", {
     x: 0.7, y: 3.15, w: 8.6, h: 0.35,
     fontSize: 11, fontFace: "Calibri", color: C.muted
   });
@@ -126,15 +125,15 @@ const mkShadow = () => ({ type: "outer", blur: 4, offset: 2, angle: 135, color: 
 {
   const s = pres.addSlide();
   s.background = { color: C.offWhite };
-  addTitle(s, 1, "TaylorDuran Leads by 10 \u2014 But Fizzz3 Is Within Striking Distance", 2);
+  addTitle(s, 1, "TaylorDuran Leads by 20 \u2014 Capn'Kirk Surges to Second After R32", 2);
 
   // 5 KPI cards
   const kpis = [
-    { label: "CURRENT LEADER", value: "450",            sub: "TaylorDuran",   accent: C.red   },
-    { label: "LEAD MARGIN",    value: "+10",             sub: "vs Fizzz3",     accent: C.green },
+    { label: "CURRENT LEADER", value: "510",            sub: "TaylorDuran",   accent: C.red   },
+    { label: "LEAD MARGIN",    value: "+20",             sub: "vs Capn'Kirk",  accent: C.green },
     { label: "GROUP AVERAGE",  value: String(groupAvg),  sub: "8 entries",     accent: C.gold  },
     { label: "CHAMP PICKS",   value: "8 / 8",           sub: "0 busted",      accent: "6B8E5A"},
-    { label: "HIGHEST CEILING",value: "1790",            sub: "Capn'Kirk",     accent: C.green },
+    { label: "HIGHEST CEILING",value: "1710",            sub: "TaylorDuran",   accent: C.green },
   ];
 
   const cardW = 1.7, cardH = 1.15, gap = 0.13, startX = 0.5, cardY = 1.0;
@@ -152,17 +151,17 @@ const mkShadow = () => ({ type: "outer", blur: 4, offset: 2, angle: 135, color: 
   s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: ky, w: 5.6, h: 0.01, fill: { color: C.lightGray } });
   s.addText("KEY INSIGHT", { x: 0.5, y: ky + 0.06, w: 2, h: 0.22, fontSize: 8, fontFace: "Calibri", color: C.darkText, bold: true });
   s.addText(
-    "TaylorDuran leads at 450 pts (37-8). Fizzz3 trails by only 10 points at 440. With 1320 points still up for grabs, any contender could overtake the lead in later rounds. Most popular champion pick: Arizona (2 brackets).",
+    "TaylorDuran leads at 510 pts (40-10) after R32. Capn'Kirk surged to 2nd with 490 pts thanks to the best R32 score (240). Duke is the overwhelming champion pick (5 of 8 brackets), while Arizona backers hold positions 1, 3, and 4.",
     { x: 0.5, y: ky + 0.28, w: 5.6, h: 0.7, fontSize: 9, fontFace: "Calibri", color: C.bodyText }
   );
 
   // TOP 8 bar chart (right side)
   s.addText("TOP 8", { x: 6.4, y: 2.4, w: 1, h: 0.22, fontSize: 8, fontFace: "Calibri", color: C.darkText, bold: true });
 
-  standings.slice(0, 7).forEach((p, i) => {
-    const ry = 2.7 + i * 0.34;
+  standings.slice(0, 8).forEach((p, i) => {
+    const ry = 2.7 + i * 0.3;
     const maxBarW = 1.5;
-    const bw = (p.pts / 470) * maxBarW;
+    const bw = (p.pts / 530) * maxBarW;
     const isTop3 = i < 3;
     const bColor = i === 0 ? C.gold : (i < 4 ? C.gold : C.blueBar);
 
@@ -231,10 +230,10 @@ const mkShadow = () => ({ type: "outer", blur: 4, offset: 2, angle: 135, color: 
   addTitle(s, 3, "What to Watch \u2014 Where This Race Gets Decided", 4);
 
   const items = [
-    { t: "Can Fizzz3 Close the 10-Point Gap?", b: "Fizzz3 trails with 440 points but has a max ceiling of 1760. The gap narrows if their champion (Arizona) advances." },
-    { t: "Capn'Kirk Has the Highest Ceiling in the Group", b: "Capn'Kirk has a max ceiling of 1790 vs. the leader's 1770. No one else can match that ceiling, but a few well-timed upsets could close the gap fast." },
-    { t: "3 Brackets Have a Unique Champion Pick \u2014 Who's Next?", b: "Most popular picks: Arizona (2), Duke (2). Florida, Auburn, Houston, Tennessee each picked once. If favorites get knocked out, contrarian pickers gain." },
-    { t: "3-Way Tie at 390 Points Makes the Middle Wide Open", b: "Paul233365, twnutt are deadlocked. The tiebreaker will come down to who nailed the higher-value later rounds \u2014 Sweet 16 picks are worth 2x R64." },
+    { t: "Capn'Kirk Had the Best R32 in the Group", b: "Capn'Kirk scored 240 in the Round of 32 \u2014 the highest of anyone \u2014 vaulting from 3rd to 2nd. That momentum makes Duke a dangerous pick going into the Sweet 16." },
+    { t: "Duke Is the Overwhelming Champion Favorite", b: "5 of 8 brackets are riding on Duke to win it all. If Duke falls, the majority of the group loses their championship points. Arizona backers (3 brackets) would gain a massive edge." },
+    { t: "TaylorDuran Holds Both the Lead AND the Highest Ceiling", b: "At 510 pts with a max of 1710, TaylorDuran leads in both current score and upside. But Fizzz3 (max 1680) and Capn'Kirk (max 1650) are within range if they nail the Sweet 16." },
+    { t: "Rike Myan & inursha Tied at 400 \u2014 But Ceilings Are Low", b: "Both sit at 400 pts with a max of only 1240. Their remaining upside is capped at 840 \u2014 they'll need near-perfect late rounds to contend." },
     { t: "The Math: Later Rounds Are Worth Exponentially More", b: "R64 = 10 pts, R32 = 20 pts, S16 = 40 pts, E8 = 80 pts, F4 = 160 pts, Championship = 320 pts. A single correct championship pick is worth 32 first-round picks." },
   ];
 
@@ -254,7 +253,7 @@ const mkShadow = () => ({ type: "outer", blur: 4, offset: 2, angle: 135, color: 
 {
   const s = pres.addSlide();
   s.background = { color: C.offWhite };
-  addTitle(s, 4, "TaylorDuran Holds a 10-Point Lead", 5);
+  addTitle(s, 4, "TaylorDuran Leads With 510 \u2014 20-Point Cushion", 5);
 
   const sorted = [...standings].sort((a, b) => a.pts - b.pts);
 
@@ -262,7 +261,7 @@ const mkShadow = () => ({ type: "outer", blur: 4, offset: 2, angle: 135, color: 
   sorted.forEach((p, i) => {
     const ry = 1.1 + i * 0.5;
     const maxBarW = 5.5;
-    const bw = (p.pts / 470) * maxBarW;
+    const bw = (p.pts / 530) * maxBarW;
     const origRank = standings.findIndex(s => s.name === p.name) + 1;
     const color = origRank <= 3 ? C.gold : C.blueBar;
 
@@ -280,7 +279,7 @@ const mkShadow = () => ({ type: "outer", blur: 4, offset: 2, angle: 135, color: 
 {
   const s = pres.addSlide();
   s.background = { color: C.offWhite };
-  addTitle(s, 5, "R64 Dominance Drives the Leaderboard", 6);
+  addTitle(s, 5, "Round-by-Round Breakdown \u2014 Capn'Kirk Dominated R32", 6);
 
   const sorted = [...standings].sort((a, b) => (a.r64 + a.r32) - (b.r64 + b.r32));
 
@@ -326,9 +325,9 @@ const mkShadow = () => ({ type: "outer", blur: 4, offset: 2, angle: 135, color: 
   // Bar chart left
   const sortedC = [...champList].sort((a, b) => a[1] - b[1]);
   sortedC.forEach((entry, i) => {
-    const ry = 1.2 + i * 0.6;
+    const ry = 1.8 + i * 0.8;
     const maxBarW = 3.8;
-    const bw = (entry[1] / 3) * maxBarW;
+    const bw = (entry[1] / 6) * maxBarW;
     const color = champColor[entry[0]] || C.blueBar;
 
     s.addText(entry[0], { x: 0.5, y: ry, w: 1.2, h: 0.45, fontSize: 10, fontFace: "Calibri", color: C.darkText, align: "right", valign: "middle" });
@@ -337,10 +336,10 @@ const mkShadow = () => ({ type: "outer", blur: 4, offset: 2, angle: 135, color: 
   });
 
   // CHAMPION STATUS table right
-  s.addText("CHAMPION STATUS", { x: 5.8, y: 1.0, w: 3.7, h: 0.3, fontSize: 9, fontFace: "Calibri", color: C.darkText, bold: true });
+  s.addText("CHAMPION STATUS", { x: 5.8, y: 1.5, w: 3.7, h: 0.3, fontSize: 9, fontFace: "Calibri", color: C.darkText, bold: true });
 
   const champSorted = [...champList].sort((a, b) => b[1] - a[1]);
-  let ty = 1.35;
+  let ty = 1.9;
   champSorted.forEach(entry => {
     const color = champColor[entry[0]] || C.navy;
     s.addShape(pres.shapes.RECTANGLE, { x: 5.8, y: ty, w: 3.7, h: 0.48, fill: { color: C.white }, shadow: mkShadow() });
@@ -358,7 +357,7 @@ const mkShadow = () => ({ type: "outer", blur: 4, offset: 2, angle: 135, color: 
 {
   const s = pres.addSlide();
   s.background = { color: C.offWhite };
-  addTitle(s, 7, "All 8 Champion Picks Still in the Hunt \u2014 No One Is Busted", 8);
+  addTitle(s, 7, "Max Ceiling \u2014 TaylorDuran Leads in Both Score and Upside", 8);
 
   s.addText("Current points (solid) vs. maximum potential (total bar). All 8 brackets shown.", {
     x: 0.5, y: 0.8, w: 9, h: 0.25,
